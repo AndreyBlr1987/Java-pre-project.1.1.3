@@ -15,7 +15,7 @@ public class UserDaoJDBCImpl implements UserDao {
     private static String INSERT_USER = "INSERT INTO newTable (name,lastname, age) VALUES (?,?,?)";
     private static String DELETE_USER = "DELETE FROM   newTable  WHERE id = ?";
     private static String CLEAN_USER = "DELETE  FROM newTable";
-    private static String DROP_TABLE = "DROP TABLE IF EXISTS  newTable";
+   private static String DROP_TABLE = "DROP TABLE IF EXISTS  newTable";
     private static String GET_ALL = "SELECT * FROM newTable ";
     Connection connection ;
 
@@ -41,7 +41,7 @@ public class UserDaoJDBCImpl implements UserDao {
          public void dropUsersTable() {
              try(Connection connection = Util.getConnection();
                  PreparedStatement preparedStatement = connection.prepareStatement(DROP_TABLE);
-             ){
+            ){
                  preparedStatement.executeUpdate();
                  System.out.println("Таблица удалена");
 

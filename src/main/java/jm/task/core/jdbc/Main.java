@@ -8,13 +8,14 @@ public class Main {
     public static void main(String[] args) {
         UserServiceImpl userService = new UserServiceImpl();
         userService.createUsersTable();
-        userService.saveUser("Ivan","Ivanov",(byte) 30);
-        userService.saveUser("Egor","Egorov",(byte) 25);
-        userService.saveUser("Andrey","Andreev",(byte) 33);
-        userService.saveUser("Sergey","Sergeev",(byte) 35);
+        userService.saveUser("Ivan","Ivanov" , (byte) 20);
+        userService.saveUser("Sergey","Sergeev" , (byte) 22);
+        userService.saveUser("Andrey","Andreev" , (byte) 25);
+        userService.saveUser("Egor","Egorov" , (byte) 30);
         userService.getAllUsers();
         userService.cleanUsersTable();
         userService.dropUsersTable();
+
 
 
     }
