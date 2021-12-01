@@ -31,32 +31,6 @@ public class Util {
         }
         return connection;
     }
-    private static SessionFactory sessionFactory;
-    public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            try {
-                Configuration configuration = new Configuration();
 
-                Properties settings = new Properties();
-                settings.put(Environment.DRIVER, MYDRIVER);
-                settings.put(Environment.URL, dbURL);
-                settings.put(Environment.USER, dbUSERNAME);
-                settings.put(Environment.PASS, dbPASSWORD);
-                settings.put(Environment.DIALECT, DIALECT);
-                settings.put(Environment.SHOW_SQL, "true");
-                settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
-                configuration.setProperties(settings);
-                configuration.addAnnotatedClass(User.class);
-
-                ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                        .applySettings(configuration.getProperties()).build();
-
-                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return  sessionFactory;
-    }
 
 }
